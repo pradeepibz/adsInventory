@@ -1,0 +1,21 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  description: MyText
+  gst: MyString
+  unit: MyString
+  rate: MyString
+  discount: MyString
+  amount: MyString
+  final_amount: MyString
+  single_price_rate: MyString
+
+two:
+  description: MyText
+  gst: MyString
+  unit: MyString
+  rate: MyString
+  discount: MyString
+  amount: MyString
+  final_amount: MyString
+  single_price_rate: MyString

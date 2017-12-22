@@ -1,0 +1,9 @@
+<tr class="nested-fields">
+  <td>
+    <%= f.select :description, options_for_select(Product.all.map{|p| [p.description, p.id]}), {include_blank: "Select"}, {class: "form-control selectpicker", "data-live-search" =>"true"} %>
+  </td>
+  <td><%= text_field_tag :qty, "", class: "form-control" %></td>
+  <td><%= text_field_tag :single_price_rate, "", class: "form-control", readonly: true %></td>
+  <td><%= text_field_tag :line_total, "", class: "form-control", readonly: true %></td>
+  <td><%= link_to_remove_association "Remove", f %></td>
+</tr>

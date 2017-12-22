@@ -1,0 +1,52 @@
+<div class="col-md-12">
+  <div class="col-md-1"></div>
+  <div class="col-md-10">
+    <div class="panel panel-default">
+      <div class="panel-header text-center">
+        <h2>ADS HARDWARES & ELECTRICALS</h2>
+      </div>
+      <div class="panel-body">
+        <%= form_for @billing do |f| %>
+        <div class="col-md-8">
+          <div class="col-md-8">
+            <div class="form-group">
+              <%= f.label "Name" %>
+              <%= f.text_field :purchase_name, class: "form-control" %>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div class="form-group">
+            <%= f.label "Bill Number" %>
+            <%= f.text_field :bill_number, class: "form-control" %>
+          </div>
+          <div class="form-group">
+            <%= f.label "Bill Date" %>
+            <%= f.text_field :bill_date, class: "form-control" %>
+          </div>
+        </div>
+        <div class="col-md-12">
+          <table class="table">
+            <thead>
+              <tr>
+                <th width="30%">Item</th>
+                <th width="20%">Qty</th>
+                <th width="20%">Unit Cost</th>
+                <th width="20%">Line Total</th>
+                <th width="10%">Action</th>
+              </tr>
+            </thead>
+            <tbody class="products">
+              <%= f.fields_for :products, :wrapper => false do |p| %>
+              <%= render 'product_fields', f: p %>
+              <% end %>
+            </tbody>
+          </table>
+          <%= link_to_add_association 'Add Item', f, :products, class: "add-new-item",  data: {"association-insertion-node" => "tbody.products", "association-insertion-method" => "append"} %>
+        </div>
+        <% end %>
+      </div>
+    </div>
+  </div>
+  <div class="col-md-1"></div>
+</div>
